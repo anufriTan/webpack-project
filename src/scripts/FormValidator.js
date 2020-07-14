@@ -1,4 +1,4 @@
-class FormValidator {
+export class FormValidator {
     constructor(form, submitBtn, errorMessages) {
         this.form = form;
         this.submitBtn = submitBtn;
@@ -9,6 +9,7 @@ class FormValidator {
 
     checkInputValidity(input) {
         const errorElem = input.closest('.popup__form').querySelector(`#${input.id}-error`);
+        
         input.setCustomValidity("");
             if (input.validity.valueMissing) {
               input.setCustomValidity(errorMessages.empty);
@@ -58,3 +59,4 @@ class FormValidator {
 }
 
 
+import {errorMessages} from './index.js'

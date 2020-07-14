@@ -1,4 +1,15 @@
+import "../pages/index.css";
+
+import {Popup} from './Popup.js';
+import {Api} from './Api.js';
+import {Card} from './Card.js';
+import {UserInfo} from './UserInfo.js';
+import {FormValidator} from './FormValidator.js';
+import {CardList} from './CardList.js';
+
+
 //Переменные
+const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk' : 'http://praktikum.tk';
 const placesList = document.querySelector('.places-list');
 const popupFormNew = document.forms.new;
 const popupFormEdit = document.forms.edit;
@@ -15,14 +26,14 @@ const userInfoJob = document.querySelector('.user-info__job');
 const userInfoAvatar = document.querySelector('.user-info__photo');
 
 
-const errorMessages = {
+export const errorMessages = {
     empty: 'Это обязательное поле',
     wrongLength: 'Должно быть от 2 до 30 символов',
     wrongUrl: 'Здесь должна быть ссылка'
   }
 
 const config = {
-    baseUrl: 'https://praktikum.tk/cohort11',
+    baseUrl: `${API_URL}/cohort11`,
     headers: {
       authorization: '36279dda-0bbf-482e-b4a1-7fb64dcfda1e',
       'Content-Type': 'application/json'
