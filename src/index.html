@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -24,26 +24,10 @@
       </div>
     </div>
     
-    <div class="places-list root__section">
-
-      <!-- Пример вёрстки карточки: -->
-
-      <!-- <div class="place-card">
-        <div class="place-card__image" style="background-image: url(https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg)">
-          <button class="place-card__delete-icon"></button>
-        </div>
-        <div class="place-card__description">
-          <h3 class="place-card__name">Камчатка</h3>
-          <button class="place-card__like-icon"></button>
-        </div>
-      </div> -->
-
-      <!-- конец примера. -->
-
-    </div>
+    <div class="places-list root__section"></div>
     <div class="popup popup-new">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close-new">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-new">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new" novalidate>
             <input type="text" required id="name-card" name="name" class="popup__input popup__input_type_name" minlength="2" 
@@ -58,7 +42,7 @@
     </div>
     <div class="popup popup-edit">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close-edit">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-edit">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="edit" novalidate>
             <input type="text" required id="user-name" name="name" class="popup__input popup__input_type_name" minlength="2" 
@@ -74,16 +58,10 @@
     <div class="popup popup-card">      
         <div class="popup__image">
           <img src="" alt="" class="popup__image-card">
-          <img src="./images/close.svg" alt="" class="popup__close popup__close-card">         
+          <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close-card">         
         </div>   
     </div> 
   </div>
-  <script src="scripts/Card.js"></script>
-  <script src="scripts/CardList.js"></script>
-  <script src="./scripts/Popup.js"></script>
-  <script src="./scripts/UserInfo.js"></script>
-  <script src="./scripts/FormValidator.js"></script>
-  <script src="./scripts/Api.js"></script>
-  <script src="./scripts/index.js"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>  
 </body>
 </html>
