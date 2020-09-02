@@ -9,7 +9,8 @@ import {CardList} from './CardList.js';
 
 
 //Переменные
-const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk' : 'http://praktikum.tk';
+// const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk' : 'http://praktikum.tk';
+const API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co' : 'http://nomoreparties.co';
 const placesList = document.querySelector('.places-list');
 const popupFormNew = document.forms.new;
 const popupFormEdit = document.forms.edit;
